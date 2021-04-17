@@ -1,0 +1,10 @@
+{
+  "name": "@store/color",
+  "main": "src/index.ts",
+  "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}

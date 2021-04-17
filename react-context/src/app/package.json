@@ -1,0 +1,15 @@
+{
+  "name": "@react-context/app",
+  "main": "src/index.tsx",
+  "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@react-context/control": "0.0.0",
+    "@react-context/view": "0.0.0",
+    "@store/color": "0.0.0",
+    "@store/value": "0.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

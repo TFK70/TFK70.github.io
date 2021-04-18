@@ -1,6 +1,13 @@
 {
   "name": "sandbox",
   "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "context:dev": "yarn workspace @react-context/app dev"
+  },
+  "workspaces": [
+    "react-context/**/**/**"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@atlantis-lab/actl": "^0.4.37"

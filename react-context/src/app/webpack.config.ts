@@ -4,7 +4,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 export const mode = 'development'
 export const entry = ['./src/index']
 export const output = {
-  path: `${__dirname}/../../../static`,
+  path: `${__dirname}/dist`,
   filename: 'bundle.js',
 }
 

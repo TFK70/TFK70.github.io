@@ -1,5 +1,6 @@
 {
   "name": "sandbox",
+  "repository": "git@github.com:TFK70.github.io",
   "version": "0.0.0",
   "private": true,
   "scripts": {

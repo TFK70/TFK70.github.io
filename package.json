@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "lint": "actl lint",
+    "typecheck": "actl typecheck",
     "context:dev": "yarn workspace @react-context/app dev"
   },
   "workspaces": [

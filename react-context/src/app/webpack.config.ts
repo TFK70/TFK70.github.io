@@ -1,5 +1,5 @@
-import { join } from 'path'
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
+import { join }               from 'path'
 
 export const mode = 'development'
 export const entry = ['./src/index']
@@ -23,8 +23,8 @@ export const module = {
 
 export const devServer = {
   contentBase: join(__dirname, 'dist'),
-    compress: true,
-    port: 9000,
+  compress: true,
+  port: 9000,
 }
 
 export const resolve = {
@@ -37,8 +37,6 @@ export const plugins = [
     devServer: 'http://localhost:9000',
     inject: false,
     appMountId: 'root',
-    scripts: [
-      'bundle.js'
-    ]
-  })
+    scripts: ['bundle.js'],
+  }),
 ]

@@ -1,6 +1,6 @@
 {
   "name": "sandbox",
-  "repository": "git@github.com:TFK70.github.io",
+  "repository": "git@github.com:TFK70/TFK70.github.io.git",
   "version": "0.0.0",
   "private": true,
   "scripts": {

@@ -4,7 +4,8 @@ import { join }               from 'path'
 export const mode = 'development'
 export const entry = ['./src/index']
 export const output = {
-  path: `${__dirname}/../../../dist`,
+  publicPath: '/',
+  path: `${__dirname}/dist`,
   filename: 'bundle.js',
 }
 

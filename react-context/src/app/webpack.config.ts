@@ -1,5 +1,4 @@
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
-import template               from 'html-webpack-template'
 import { join }               from 'path'
 
 export const mode = 'development'
@@ -34,7 +33,7 @@ export const resolve = {
 
 export const plugins = [
   new HtmlWebpackPlugin({
-    template,
+    template: require('html-webpack-template'),
     devServer: 'http://localhost:9000',
     inject: false,
     appMountId: 'root',

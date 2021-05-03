@@ -22,9 +22,15 @@ const Control = () => {
       }}
     >
       <input placeholder='value' value={value} onChange={event => setValue(event.target.value)} />
-      <button type='button' onClick={() => setColor('red')}>red</button>
-      <button type='button' onClick={() => setColor('green')}>green</button>
-      <button type='button' onClick={() => setColor('blue')}>blue</button>
+      <button type='button' onClick={() => setColor('red')}>
+        red
+      </button>
+      <button type='button' onClick={() => setColor('green')}>
+        green
+      </button>
+      <button type='button' onClick={() => setColor('blue')}>
+        blue
+      </button>
     </div>
   )
 }

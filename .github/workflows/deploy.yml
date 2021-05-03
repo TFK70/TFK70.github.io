@@ -7,16 +7,16 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v2.3.1
 
-      - name: Install and Build 🔧
+      - name: Install and Build
         run: |
           yarn
           yarn workspace @react-context/app build
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages
-          folder: dist
+          folder: react-context/src/app/dist

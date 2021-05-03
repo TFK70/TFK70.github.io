@@ -20,6 +20,3 @@ jobs:
 
       - name: Build
         run: yarn workspace @react-context/app build
-
-      - name: Lint
-        run: yarn lint

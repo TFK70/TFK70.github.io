@@ -3,7 +3,7 @@ name: Checkout
 on: pull_request
 
 jobs:
-  lintcheck:
+  Checking:
     runs-on: ubuntu-latest
 
     steps:

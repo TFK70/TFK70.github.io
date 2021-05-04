@@ -23,7 +23,7 @@ jobs:
         run: git checkout -b origin/gh-pages
 
       - name: Clear the branch
-        run: rm ./*
+        run: rm  -rf ./*
 
       - name: Unstash dist
         run: git stash pop
@@ -38,4 +38,4 @@ jobs:
         run: |
           git add .
           git commit -m "Release changes"
-          git push
+          git push -u origin gh-pages

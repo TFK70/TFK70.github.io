@@ -40,4 +40,4 @@ jobs:
           git config --global user.name "Deploy Job"
           git add .
           git commit -m "Release changes"
-          git push
+          git push --set-upstream origin origin/gh-pages

@@ -17,7 +17,7 @@ jobs:
         run: yarn workspace @react-context/app build
 
       - name: Stash files from dist
-        run: git add react-context/src/app/dist && git stash
+        run: git add -f react-context/src/app/dist && git stash
 
       - name: Checkout to gh-pages branch
         run: git checkout gh-pages

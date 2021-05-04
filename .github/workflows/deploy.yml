@@ -36,6 +36,8 @@ jobs:
 
       - name: Commit changes
         run: |
+          git config --global user.email "test@deploy.email"
+          git config --global user.name "Deploy Job"
           git add .
           git commit -m "Release changes"
           git push -u origin gh-pages

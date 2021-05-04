@@ -7,7 +7,7 @@ import { ValueProvider }   from '@store/value'
 
 const App = () => {
   const [value, setValue] = useState<string>('')
-  const [color, setColor] = useState<'silver' | 'red' | 'green' | 'blue'>('silver')
+  const [color, setColor] = useState<'grey' | 'red' | 'green' | 'blue'>('grey')
 
   return (
     <ColorProvider value={[color, setColor]}>

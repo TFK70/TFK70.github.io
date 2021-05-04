@@ -10,13 +10,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.1
 
-      - name: Install and Build
-        run: |
-          yarn
-          yarn workspace @react-context/app build
+      - name: Install
+        run: yarn
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: gh-pages
-          folder: react-context/src/app/dist
+      - name: Build
+        run: yarn workspace @react-context/app build
+
+      - name: Stash files from dist
+        run: git add react-context/src/app/dist && git stash
+
+      - name: Checkout to gh-pages branch
+        run: git checkout gh-pages
+
+      - name: Clear the branch
+        run: rm ./*
+
+      - name: Unstash dist
+        run: git stash pop
+
+      - name: Format structure
+        run: cp -a ./dist ./
+
+      - name: Cleanup
+        run: rm -rf ./dist
+
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "Release changes"
+          git push

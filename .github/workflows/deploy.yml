@@ -10,6 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.1
 
+      - name: Install and Build
       - name: Install
         run: yarn
 
@@ -36,6 +37,14 @@ jobs:
 
       - name: Commit changes
         run: |
+          yarn
+          yarn workspace @react-context/app build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: react-context/src/app/dist
           git config --global user.email "test@deploy.email"
           git config --global user.name "Deploy Job"
           git add .

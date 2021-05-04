@@ -20,7 +20,7 @@ jobs:
         run: git add -f react-context/src/app/dist && git stash
 
       - name: Checkout to gh-pages branch
-        run: git checkout gh-pages
+        run: git checkout origin/gh-pages
 
       - name: Clear the branch
         run: rm ./*

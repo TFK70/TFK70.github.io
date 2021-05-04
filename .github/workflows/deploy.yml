@@ -29,10 +29,10 @@ jobs:
         run: git stash pop
 
       - name: Format structure
-        run: cp -a ./dist ./
+        run: cp -a react-context/src/app/dist ./
 
       - name: Cleanup
-        run: rm -rf ./dist
+        run: rm -rf react-context
 
       - name: Commit changes
         run: |

@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: feat/timestamps
 
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -27,9 +27,12 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          ACCESS_TOKEN: '${{ secrets.ACCESS_TOKEN }}'
         with:
-          author_name: github-actions
-          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          author_name: Nikita Elfimov
+          author_email: me@tfk.name
           message: 'chore(common): generated'
-          branch: master
+          branch: feat/timestamps
+
+        - name: Create Pull Request
+          uses: peter-evans/create-pull-request@v4

@@ -33,7 +33,7 @@ jobs:
           branch: feat/commit-code
           delete-branch: true
           assignees: TFK70
-          draft: falseg
+          draft: false
           title: 'Timestamp feature'
           body: '## Timestamped'
           branch-suffix: random

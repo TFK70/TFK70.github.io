@@ -37,7 +37,9 @@ jobs:
         env:
           ACCESS_TOKEN: '${{ secrets.ACCESS_TOKEN }}'
         with:
+          token: '${{ secrets.ACCESS_TOKEN }}'
           author: Nikita Elfimov <me@tfk.name>
+          committer: Nikita Elfimov <me@tfk.name>
           commit-message: 'chore(common): generated'
           base: master
           branch: feat/commit-code
@@ -46,3 +48,4 @@ jobs:
           draft: false
           title: 'Timestamp feature'
           body: '## Timestamped'
+          branch-suffix: random

@@ -35,8 +35,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          base: feat/commit-code
-          branch: master
+          base: master
+          branch: feat/commit-code
           delete-branch: true
           assignees: TFK70
           draft: false

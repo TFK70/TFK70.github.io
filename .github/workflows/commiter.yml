@@ -34,5 +34,5 @@ jobs:
           message: 'chore(common): generated'
           branch: feat/timestamps
 
-        - name: Create Pull Request
-          uses: peter-evans/create-pull-request@v4
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4

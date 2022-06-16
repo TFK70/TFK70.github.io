@@ -37,7 +37,7 @@ jobs:
         env:
           ACCESS_TOKEN: '${{ secrets.ACCESS_TOKEN }}'
         with:
-          token: '${{ secrets.ACCESS_TOKEN }}'
+          token: ACCESS_TOKEN
           author: Nikita Elfimov <me@tfk.name>
           committer: Nikita Elfimov <me@tfk.name>
           commit-message: 'chore(common): generated'

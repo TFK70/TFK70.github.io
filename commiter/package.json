@@ -1,0 +1,14 @@
+{
+  "name": "@commiter/script",
+  "license": "BSD-3-Clause",
+  "main": "src/index.js",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.2.0",
+    "uppercamelcase": "^3.0.0"
+  }
+}

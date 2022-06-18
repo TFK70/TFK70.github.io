@@ -1,12 +1,13 @@
 import { faker } from '@faker-js/faker'
-import camelcase from 'uppercamelcase'
+import uppercamelcase from 'uppercamelcase'
+import camelcase from 'camelcase'
 
-export const generateCode = (classes = 1) => {
+export const generateCode = () => {
   const genClass = () => {
     const name = `${faker.word.noun()}-${faker.word.noun()}`
-    const genClassName = () => camelcase(name)
+    const genClassName = () => uppercamelcase(name)
     const genProperties = () => {
-      const words = [...Array(5)].map(() => faker.word.noun())
+      const words = [...Array(5)].map(() => camelcase(faker.word.noun()))
       const privateProperties = words.map((word) => `  #${word}: string`).join('\n\n')
       const getters = words
         .map(

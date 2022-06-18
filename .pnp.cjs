@@ -138,6 +138,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@commiter/script", "workspace:commiter"],\
             ["@faker-js/faker", "npm:7.2.0"],\
+            ["camelcase", "npm:7.0.0"],\
             ["uppercamelcase", "npm:3.0.0"]\
           ],\
           "linkType": "SOFT"\
@@ -1566,6 +1567,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/camelcase-npm-5.3.1-5db8af62c5-e6effce26b.zip/node_modules/camelcase/",\
           "packageDependencies": [\
             ["camelcase", "npm:5.3.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.0.0", {\
+          "packageLocation": "./.yarn/cache/camelcase-npm-7.0.0-5041fb20b5-162d59607b.zip/node_modules/camelcase/",\
+          "packageDependencies": [\
+            ["camelcase", "npm:7.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\

@@ -1,16 +1,16 @@
 {
   "name": "sandbox",
-  "repository": "https://github.com/TFK70/TFK70.github.io.git",
-  "license": "BSD-3-Clause",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "gen": "yarn workspace @commiter/script start"
-  },
+  "repository": "https://github.com/TFK70/TFK70.github.io.git",
+  "license": "BSD-3-Clause",
   "workspaces": [
     "react-context/**/*",
     "commiter"
   ],
+  "scripts": {
+    "gen": "yarn workspace @commiter/script start"
+  },
   "devDependencies": {
     "@atls/code-service": "^0.0.16",
     "@atls/config-jest": "^0.0.2",

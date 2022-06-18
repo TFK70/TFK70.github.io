@@ -7,7 +7,7 @@ import { GEN_PATH } from '../config.js'
 export const createDomain = (cache) => {
   let domainName = faker.word.noun()
 
-  while(existsSync(`${GEN_PATH}/${domainName}`)) {
+  while (existsSync(`${GEN_PATH}/${domainName}`)) {
     domainName = faker.word.noun()
   }
 

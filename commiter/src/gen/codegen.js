@@ -7,13 +7,17 @@ export const generateCode = (classes = 1) => {
     const genClassName = () => camelcase(name)
     const genProperties = () => {
       const words = [...Array(5)].map(() => faker.word.noun())
-      const privateProperties = words.map(word => `  #${word}: string`).join('\n\n')
-      const getters = words.map(word => `  get ${word}() {
+      const privateProperties = words.map((word) => `  #${word}: string`).join('\n\n')
+      const getters = words
+        .map(
+          (word) => `  get ${word}() {
     return this.#${word}
   }
-      `).join('\n\n')
-      const construct =`  constructor() {
-${words.map(word => `   this.#${word} = '${faker.word.adjective()}'`).join('\n')}
+      `
+        )
+        .join('\n\n')
+      const construct = `  constructor() {
+${words.map((word) => `   this.#${word} = '${faker.word.adjective()}'`).join('\n')}
   }`
 
       return `${privateProperties}\n\n${construct}\n\n${getters}`
@@ -32,7 +36,7 @@ ${genMethods()}
 
     return {
       name,
-      code
+      code,
     }
   }
 

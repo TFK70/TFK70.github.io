@@ -1,18 +1,27 @@
 {
   "name": "sandbox",
-  "repository": "https://github.com/TFK70/TFK70.github.io.git",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "lint": "actl lint",
-    "typecheck": "actl typecheck",
-    "context:dev": "yarn workspace @react-context/app dev"
-  },
+  "repository": "https://github.com/TFK70/TFK70.github.io.git",
+  "license": "BSD-3-Clause",
   "workspaces": [
-    "react-context/**/**/**"
+    "react-context/**/*",
+    "commiter"
   ],
-  "license": "MIT",
+  "scripts": {
+    "gen": "yarn workspace @commiter/script start"
+  },
   "devDependencies": {
-    "@atlantis-lab/actl": "^0.4.37"
-  }
+    "@atls/code-service": "^0.0.16",
+    "@atls/config-jest": "^0.0.2",
+    "@jest/core": "^27.4.5",
+    "@types/eslint": "^8",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.10",
+    "@types/react": "^17.0.37",
+    "eslint": "^8.4.1",
+    "husky": "7.0.2",
+    "typescript": "^4.4.4"
+  },
+  "packageManager": "yarn@3.2.1"
 }

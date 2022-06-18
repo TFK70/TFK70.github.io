@@ -1,4 +1,4 @@
-name: Commit random shit
+name: Commit generated code
 on:
   schedule:
     # every day at 6:00 UTC (9:00 MSK)
@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -25,18 +27,21 @@ jobs:
       - name: Generate
         run: yarn run gen
 
+      - name: Format
+        run: yarn format
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          #          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           author: Nikita Elfimov <me@tfk.name>
           committer: Nikita Elfimov <me@tfk.name>
-          commit-message: 'chore(common): generated'
+          commit-message: 'chore(common): generated domain'
           base: master
-          branch: feat/commit-code
+          branch: feat/new-domain
           delete-branch: true
           assignees: TFK70
           draft: false
-          title: 'Timestamp feature'
-          body: '## Timestamped'
+          title: 'Feature: new domain'
+          body: 'Created new domain'
           branch-suffix: random

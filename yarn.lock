@@ -88,6 +88,7 @@ __metadata:
   resolution: "@commiter/script@workspace:commiter"
   dependencies:
     "@faker-js/faker": ^7.2.0
+    camelcase: ^7.0.0
     uppercamelcase: ^3.0.0
   languageName: unknown
   linkType: soft
@@ -1127,6 +1128,13 @@ __metadata:
   version: 5.3.1
   resolution: "camelcase@npm:5.3.1"
   checksum: e6effce26b9404e3c0f301498184f243811c30dfe6d0b9051863bd8e4034d09c8c2923794f280d6827e5aa055f6c434115ff97864a16a963366fb35fd673024b
+  languageName: node
+  linkType: hard
+
+"camelcase@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "camelcase@npm:7.0.0"
+  checksum: 162d59607b3b46e910af151348d5e40af579048a5d07f3c06370b096ca0d42ba4a88bd92cf4e3482645ba1ffdd6f744d8273c1b9594e493fc10883d54adf7cbe
   languageName: node
   linkType: hard
 

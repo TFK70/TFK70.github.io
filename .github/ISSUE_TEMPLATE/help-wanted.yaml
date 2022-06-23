@@ -45,12 +45,11 @@ body:
       render: markdown
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: assets-media
     attributes:
       label: 'Материалы (медиа)'
       description: 'Прикладываем скриншоты – если ошибка относится к визуальной части и сбор логов не приемлем. Например: Скриншот логов kubectl или console.log будет абсолютно бесполезным, человек потратит лишнее время на то, чтобы, разобрать мыло которое вы ему прислали (не забывайте, что у всех, как правило, разное разрешение)'
-      render: markdown
   - type: textarea
     id: assets-logs
     attributes:

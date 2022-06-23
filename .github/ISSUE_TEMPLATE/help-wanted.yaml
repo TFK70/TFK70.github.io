@@ -1,6 +1,6 @@
 name: Help Wanted
 description: Create help request
-labels: ['help-request']
+labels: ['help-wanted']
 assignees:
   - TFK70
 body:

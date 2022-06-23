@@ -6,12 +6,14 @@ assignees:
   - TFK70
 body:
   - type: input
+    id: scope
     attributes:
       label: 'Скоуп'
       description: 'Например: Логика фильтрации элементов'
     validations:
       required: true
   - type: textarea
+    id: description
     attributes:
       label: 'Описание'
       description: 'Обобщенное описание проблемы. Например: yarn typecheck выдает ошибку внутри библиотеки @grpc/grpc-js.'
@@ -19,11 +21,13 @@ body:
     validations:
       required: true
   - type: textarea
+    id: context
     attributes:
       label: 'Контекст'
       description: 'Например: Проблема уже встречалась на проекте <референс на проект>, решали ее так: <...>. Сейчас проблема появилась вновь, и прошлое решение не работает'
       render: markdown
   - type: textarea
+    id: reproduce
     attributes:
       label: 'Воспроизведение'
       description: 'Шаги для воспроизведения проблемы'
@@ -35,6 +39,7 @@ body:
     validations:
       required: true
   - type: textarea
+    id: expected-behavior
     attributes:
       label: 'Ожидаемое поведение'
       description: 'Чётко и понятно (без "я думал" или "ну, типа и так панятна же…не?") опишите ожидаемое поведение.'
@@ -42,16 +47,19 @@ body:
     validations:
       required: true
   - type: textarea
+    id: assets-media
     attributes:
       label: 'Материалы (медиа)'
       description: 'Прикладываем скриншоты – если ошибка относится к визуальной части и сбор логов не приемлем. Например: Скриншот логов kubectl или console.log будет абсолютно бесполезным, человек потратит лишнее время на то, чтобы, разобрать мыло которое вы ему прислали (не забывайте, что у всех, как правило, разное разрешение)'
       render: markdown
   - type: textarea
+    id: assets-logs
     attributes:
       label: 'Материалы (логи)'
       description: 'Прикладываем логи — если ошибка относится к системной части и скриншот не поможет в анализе и решении проблемы. Например: Логи при попытке отдебажить графические артефакты или проблему с логикой UI элементов (у кнопки неправильной формы углы) или же когда речь идёт о логике поведения той или иной части приложения (тут лучше вообще делать схемы).'
       render: shell
   - type: textarea
+    id: actions
     attributes:
       label: 'Действия'
       description: 'Описать порядок совершаемых вами действий в попытках решить проблему'
@@ -71,6 +79,7 @@ body:
     validations:
       required: true
   - type: textarea
+    id: question
     attributes:
       label: 'Вопрос'
       description: 'Резюмирующая часть, в которой вы должны дать отвечающему понять, какая именно помощь вам нужна. Все, что было выше, нужно исключительно для погружения в контекст проблемы. Без сформулированного вопроса отвечающему придется самому додумывать что именно вам непонятно.'

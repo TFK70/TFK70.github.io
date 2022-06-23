@@ -8,21 +8,27 @@ body:
     id: scope
     attributes:
       label: 'Скоуп'
-      description: 'Например: Логика фильтрации элементов'
+      description: 'Область, в которой возникла проблема'
+      placeholder: 'Например: Логика фильтрации элементов'
     validations:
       required: true
   - type: textarea
     id: description
     attributes:
       label: 'Описание'
-      description: 'Обобщенное описание проблемы. Например: yarn typecheck выдает ошибку внутри библиотеки @grpc/grpc-js'
+      description: 'Обобщенное описание проблемы'
+      placeholder: 'Например: yarn typecheck выдает ошибку внутри библиотеки @grpc/grpc-js'
     validations:
       required: true
   - type: textarea
     id: context
     attributes:
       label: 'Контекст'
-      description: 'Например: Проблема уже встречалась на проекте <референс на проект>, решали ее так: <...>. Сейчас проблема появилась вновь, и прошлое решение не работает'
+      description: 'Дополнительная информация, которая поможет погрузиться в проблему'
+      placeholder: |
+      'Проблема уже встречалась на проекте <референс на проект>, решали ее так: <...>. Сейчас проблема появилась вновь, и прошлое решение не работает
+      
+      Проблема уже обсуждалась ранее с `@SomeGuy` (никнейм на GitHub), пришли к тому-то, тому-то'
   - type: textarea
     id: reproduce
     attributes:

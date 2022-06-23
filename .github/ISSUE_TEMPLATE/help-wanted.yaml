@@ -45,7 +45,7 @@ body:
       render: markdown
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: assets-media
     attributes:
       label: 'Материалы (медиа)'

@@ -9,40 +9,39 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Read first template
-        id: template
+        id: template1
         uses: juliangruber/read-file-action@v1
         with:
           path: ./.github/ISSUE_TEMPLATE/random.md
-      - name: Echo package.json
-        run: echo ${{ steps.package.outputs.content1 }}
       - name: Read second template
-        id: template
+        id: template2
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./.github/ISSUE_TEMPLATE/random.md
+          path: ./.github/ISSUE_TEMPLATE/random-2.md
       - name: Echo package.json
-        run: echo ${{ steps.package.outputs.content2 }}
+        run: echo ${{ steps.package.outputs.content }}
       - uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |                        
-            const body1 = function(){/*${{ steps.template.outputs.content1 }}*/}.toString()            
-            const body2 = function(){/*${{ steps.template.outputs.content2 }}*/}.toString()            
-            const members = []
+            const body1 = function(){/*${{ steps.template1.outputs.content }}*/}.toString()            
+            const body2 = function(){/*${{ steps.template2.outputs.content }}*/}.toString()
+            const parts = context.repo.repo.split('.')   
+            const assignees = [parts.length > 1 ? parts[0] : 'TorinAsakura']
             github.issues.create({
-              title: '[DSM] ' + new Date().toDateString(),
+              title: 'First issue',
               owner: context.repo.owner,
               repo: context.repo.repo,
-              assignees: members,
+              assignees,
               labels: ['good first issue'],
               body: body1.slice(13,-3)
             })
             
             github.issues.create({
-              title: '[DSM] ' + new Date().toDateString(),
+              title: 'Second issue',
               owner: context.repo.owner,
               repo: context.repo.repo,
-              assignees: members,
+              assignees,
               labels: ['good first issue'],
               body: body2.slice(13,-3)
             })

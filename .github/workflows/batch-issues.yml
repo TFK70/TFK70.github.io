@@ -1,0 +1,48 @@
+name: Create batch of issues
+on:
+  workflow_dispatch:
+jobs:
+  Run:
+    name: 'Run'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Read first template
+        id: template
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./.github/ISSUE_TEMPLATE/random.md
+      - name: Echo package.json
+        run: echo ${{ steps.package.outputs.content1 }}
+      - name: Read second template
+        id: template
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./.github/ISSUE_TEMPLATE/random.md
+      - name: Echo package.json
+        run: echo ${{ steps.package.outputs.content2 }}
+      - uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |                        
+            const body1 = function(){/*${{ steps.template.outputs.content1 }}*/}.toString()            
+            const body2 = function(){/*${{ steps.template.outputs.content2 }}*/}.toString()            
+            const members = []
+            github.issues.create({
+              title: '[DSM] ' + new Date().toDateString(),
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              assignees: members,
+              labels: ['good first issue'],
+              body: body1.slice(13,-3)
+            })
+            
+            github.issues.create({
+              title: '[DSM] ' + new Date().toDateString(),
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              assignees: members,
+              labels: ['good first issue'],
+              body: body2.slice(13,-3)
+            })

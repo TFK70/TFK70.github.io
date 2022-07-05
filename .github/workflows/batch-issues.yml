@@ -23,7 +23,7 @@ jobs:
       - uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
-          script: |                        
+          script: |
             const body1 = function(){/*${{ steps.template1.outputs.content }}*/}.toString()            
             const body2 = function(){/*${{ steps.template2.outputs.content }}*/}.toString()
             const parts = context.repo.repo.split('.')   
@@ -36,7 +36,7 @@ jobs:
               labels: ['good first issue'],
               body: body1.slice(13,-3)
             })
-            
+
             github.issues.create({
               title: 'Second issue',
               owner: context.repo.owner,

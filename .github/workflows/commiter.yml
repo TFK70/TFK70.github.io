@@ -30,6 +30,13 @@ jobs:
       - name: Format
         run: yarn format
 
+      - uses: crazy-max/ghaction-import-gpg@v3
+        with:
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git-user-signingkey: true
+          git-commit-gpgsign: true
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
